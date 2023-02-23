@@ -131,3 +131,6 @@ dmypy.json
 # Ignored datasets
 /datasets/year_2021.csv
 /datasets/us-gleif-results.csv
+
+# Ignored files
+.DS_Store
