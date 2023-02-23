@@ -131,6 +131,7 @@ dmypy.json
 # Ignored datasets
 /datasets/year_2021.csv
 /datasets/us-gleif-results.csv
+/datasets/failed-us-banklist.csv
 
 # Ignored files
 .DS_Store
