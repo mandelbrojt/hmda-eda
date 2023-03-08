@@ -1,26 +1,5 @@
-# Selected columns for Exploratory Data Analysis
-selected_cols = [
-    "lei", "derived_msa-md", "state_code", "county_code", "census_tract",
-    "conforming_loan_limit", "derived_ethnicity", "derived_race",
-    "derived_sex", "action_taken", "purchaser_type", "preapproval",
-    "loan_type", "loan_purpose", "lien_status", "reverse_mortgage",
-    "open-end_line_of_credit", "business_or_commercial_purpose",
-    "loan_amount", "interest_rate", "rate_spread", "hoepa_status",
-    "total_loan_costs", "total_points_and_fees", "origination_charges",
-    "discount_points", "lender_credits", "loan_term", "negative_amortization",
-    "interest_only_payment", "balloon_payment", "property_value",
-    "construction_method", "occupancy_type", "total_units", "applicant_age",
-    "income", "debt_to_income_ratio", "applicant_credit_score_type",
-    "applicant_race_observed", "applicant_sex_observed",
-    "applicant_age_above_62", "submission_of_application",
-    "initially_payable_to_institution", "aus-1", "denial_reason-1",
-    "tract_population", "ffiec_msa_md_median_family_income",
-    "tract_to_msa_income_percentage", "tract_owner_occupied_units",
-    "tract_median_age_of_housing_units"
-]
-
 # Maps every column to their corresponding data type
-col_dtypes = {
+col_to_dtypes = {
     "lei":"str",
     "derived_msa-md":"str",
     "state_code":"str",
@@ -49,7 +28,7 @@ col_dtypes = {
     "origination_charges":"float32",
     "discount_points":"float32",
     "lender_credits":"float32",
-    "loan_term":"int32",
+    "loan_term":"float32",
     "negative_amortization":"category",
     "interest_only_payment":"category",
     "balloon_payment":"category",
@@ -59,7 +38,6 @@ col_dtypes = {
     "total_units":"category",
     "applicant_age":"category",
     "income":"float32",
-    "debt_to_income_ratio":"category",
     "applicant_credit_score_type":"category",
     "applicant_race_observed":"category",
     "applicant_sex_observed":"category",
@@ -74,6 +52,9 @@ col_dtypes = {
     "tract_owner_occupied_units":"int32",
     "tract_median_age_of_housing_units":"int32"
 }
+
+# Selected column names
+selected_cols = [col for col in col_to_dtypes.keys()]
 
 # Maps every categorical column to their corresponding labels
 cols_to_labels = {
@@ -223,3 +204,6 @@ cols_to_labels = {
     10:"Not applicable"
     }
 }
+
+# New names for columns that have a label
+cols_wit_labs_names = [col + "_lb" for col in cols_to_labels.keys()]
