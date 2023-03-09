@@ -1,19 +1,15 @@
 # Maps every column to their corresponding data type
 col_to_dtypes = {
     "lei":"str",
-    "derived_msa-md":"str",
-    "state_code":"str",
-    "county_code":"str",
+    "derived_msa-md":"int32",
+    "state_code":"category",
+    "county_code":"float32",
     "census_tract":"float32",
     "conforming_loan_limit":"category",
-    "derived_ethnicity":"category",
-    "derived_race":"category",
-    "derived_sex":"category",
     "action_taken":"category",
     "purchaser_type":"category",
     "preapproval":"category",
     "loan_type":"category",
-    "loan_purpose":"category",
     "loan_purpose":"category",
     "lien_status":"category",
     "reverse_mortgage":"category",
@@ -39,8 +35,20 @@ col_to_dtypes = {
     "applicant_age":"category",
     "income":"float32",
     "applicant_credit_score_type":"category",
+    "co-applicant_credit_score_type":"category",
+    "applicant_ethnicity-1":"category",
+    "co-applicant_ethnicity-1":"category",
+    "applicant_ethnicity_observed":"category",
+    "co-applicant_ethnicity_observed":"category",
+    "applicant_race-1":"category",
+    "co-applicant_race-1":"category",
     "applicant_race_observed":"category",
+    "co-applicant_race_observed":"category",
+    "applicant_sex":"category",
+    "co-applicant_sex":"category",
     "applicant_sex_observed":"category",
+    "co-applicant_sex_observed":"category",
+    "co-applicant_age":"category",
     "applicant_age_above_62":"category",
     "submission_of_application":"category",
     "initially_payable_to_institution":"category",
@@ -48,7 +56,6 @@ col_to_dtypes = {
     "denial_reason-1":"category",
     "tract_population":"float32",
     "ffiec_msa_md_median_family_income":"float32",
-    "tract_to_msa_income_percentage":"float32",
     "tract_owner_occupied_units":"int32",
     "tract_median_age_of_housing_units":"int32"
 }
@@ -165,15 +172,128 @@ cols_to_labels = {
     9:"Not applicable",
     1111:"Exempt"
     },
+    "co-applicant_credit_score_type":{
+    1:"Equifax Beacon 5.0",
+    2:"Experian Fair Isaac",
+    3:"FICO Risk Score Classic 04",
+    4:"FICO Risk Score Classic 98",
+    5:"VantageScore 2.0",
+    6:"VantageScore 3.0",
+    7:"More than one credit scoring model",
+    8:"Other credit scoring model",
+    9:"Not applicable",
+    10:"No co-applicant",
+    1111:"Exempt"
+    },
+    "applicant_ethnicity-1":{
+    1:"Hispanic or Latino",
+    11:"Mexican",
+    12:"Puerto Rican",
+    13:"Cuban",
+    14:"Other Hispanic or Latino",
+    2:"Not Hispanic or Latino",
+    3:"Information not provided by applicant in mail, internet, or telephone application",
+    4:"Not applicable"
+    },
+    "co-applicant_ethnicity-1":{
+    1:"Hispanic or Latino",
+    11:"Mexican",
+    12:"Puerto Rican",
+    13:"Cuban",
+    14:"Other Hispanic or Latino",
+    2:"Not Hispanic or Latino",
+    3:"Information not provided by applicant in mail, internet, or telephone application",
+    4:"Not applicable",
+    5:"No co-applicant"
+    },
+    "applicant_ethnicity_observed":{
+    1:"Collected on the basis of visual observation or surname",
+    2:"Not collected on the basis of visual observation or surname",
+    3:"Not applicable"
+    },
+    "co-applicant_ethnicity_observed":{
+    1:"Collected on the basis of visual observation or surname",
+    2:"Not collected on the basis of visual observation or surname",
+    3:"Not applicable",
+    4:"No co-applicant"
+    },
+    "applicant_race-1":{
+    1:"American Indian or Alaska Native",
+    2:"Asian",
+    21:"Asian Indian",
+    22:"Chinese",
+    23:"Filipino",
+    24:"Japanese",
+    25:"Korean",
+    26:"Vietnamese",
+    27:"Other Asian",
+    3:"Black or African American",
+    4:"Native Hawaiian or Other Pacific Islander",
+    41:"Native Hawaiian",
+    42:"Guamanian or Chamorro",
+    43:"Samoan",
+    44:"Other Pacific Islander",
+    5:"White",
+    6:"Information not provided by applicant in mail, internet, or telephone application",
+    7:"Not applicable"
+    },
+    "co-applicant_race-1":{
+    1:"American Indian or Alaska Native",
+    2:"Asian",
+    21:"Asian Indian",
+    22:"Chinese",
+    23:"Filipino",
+    24:"Japanese",
+    25:"Korean",
+    26:"Vietnamese",
+    27:"Other Asian",
+    3:"Black or African American",
+    4:"Native Hawaiian or Other Pacific Islander",
+    41:"Native Hawaiian",
+    42:"Guamanian or Chamorro",
+    43:"Samoan",
+    44:"Other Pacific Islander",
+    5:"White",
+    6:"Information not provided by applicant in mail, internet, or telephone application",
+    7:"Not applicable",
+    8:"No co-applicant"
+    },
     "applicant_race_observed":{
     1:"Collected on the basis of visual observation or surname",
     2:"Not collected on the basis of visual observation or surname",
     3:"Not applicable"
     },
+    "co-applicant_race_observed":{
+    1:"Collected on the basis of visual observation or surname",
+    2:"Not collected on the basis of visual observation or surname",
+    3:"Not applicable",
+    4:"No co-applicant"
+    },
+    "applicant_sex":{
+    1:"Male",
+    2:"Female",
+    3:"Information not provided by applicant in mail, internet, or telephone application",
+    4:"Not applicable",
+    6:"Applicant selected both male and female"
+    },
+    "co-applicant_sex":{
+    1:"Male",
+    2:"Female",
+    3:"Information not provided by applicant in mail, internet, or telephone application",
+    4:"Not applicable",
+    5:"No co-applicant",
+    6:"Co-applicant selected both male and female"
+    },
     "applicant_sex_observed":{
     1:"Collected on the basis of visual observation or surname",
     2:"Not collected on the basis of visual observation or surname",
     3:"Not applicable"
+    },
+    "co-applicant_sex_observed":{
+    1:"Collected on the basis of visual observation or surname",
+    2:"Not collected on the basis of visual observation or surname",
+    3:"Not applicable",
+    4:"No co-applicant"
     },
     "submission_of_application":{
     1:"Submitted directly to your institution",
@@ -204,6 +324,3 @@ cols_to_labels = {
     10:"Not applicable"
     }
 }
-
-# New names for columns that have a label
-cols_wit_labs_names = [col + "_lb" for col in cols_to_labels.keys()]
