@@ -130,8 +130,7 @@ dmypy.json
 
 # Ignored datasets
 /datasets/year_2021.csv
-/datasets/us-gleif-results.csv
-/datasets/failed-us-banklist.csv
+/datasets/gleif-data-pool.csv
 /datasets/year_2021_shuffled.csv
 
 # Ignored files
