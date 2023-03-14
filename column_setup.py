@@ -1,20 +1,14 @@
 # Maps every column to their corresponding data type
 col_to_dtypes = {
     "lei":"str",
-    "derived_msa-md":"int32",
     "state_code":"category",
     "county_code":"float32",
-    "census_tract":"float32",
     "conforming_loan_limit":"category",
     "action_taken":"category",
     "purchaser_type":"category",
-    "preapproval":"category",
     "loan_type":"category",
     "loan_purpose":"category",
     "lien_status":"category",
-    "reverse_mortgage":"category",
-    "open-end_line_of_credit":"category",
-    "business_or_commercial_purpose":"category",
     "loan_amount":"float32",
     "interest_rate":"float32",
     "rate_spread":"float32",
@@ -25,7 +19,6 @@ col_to_dtypes = {
     "discount_points":"float32",
     "lender_credits":"float32",
     "loan_term":"float32",
-    "negative_amortization":"category",
     "interest_only_payment":"category",
     "balloon_payment":"category",
     "property_value":"float32",
@@ -38,26 +31,16 @@ col_to_dtypes = {
     "co-applicant_credit_score_type":"category",
     "applicant_ethnicity-1":"category",
     "co-applicant_ethnicity-1":"category",
-    "applicant_ethnicity_observed":"category",
-    "co-applicant_ethnicity_observed":"category",
     "applicant_race-1":"category",
     "co-applicant_race-1":"category",
-    "applicant_race_observed":"category",
-    "co-applicant_race_observed":"category",
     "applicant_sex":"category",
     "co-applicant_sex":"category",
-    "applicant_sex_observed":"category",
     "co-applicant_sex_observed":"category",
     "co-applicant_age":"category",
-    "applicant_age_above_62":"category",
-    "submission_of_application":"category",
-    "initially_payable_to_institution":"category",
     "aus-1":"category",
     "denial_reason-1":"category",
     "tract_population":"float32",
-    "ffiec_msa_md_median_family_income":"float32",
-    "tract_owner_occupied_units":"int32",
-    "tract_median_age_of_housing_units":"int32"
+    "ffiec_msa_md_median_family_income":"float32"
 }
 
 # Selected column names
@@ -94,15 +77,11 @@ cols_to_labels = {
         8:"Affiliate institution",
         9:"Other type of purchaser"
     },
-    "preapproval":{
-        1:"Preapproval requested",
-        2:"Preapproval not requested"
-    },
     "loan_type":{
         1:"Conventional",
-        2:"Federal Housing Administration insured",
-        3:"Veterans Affairs guaranteed",
-        4:"USDA Rural Housing Service or Farm Service Agency guaranteed"
+        2:"FHA",
+        3:"VA",
+        4:"RHS or FSA"
     },
     "loan_purpose":{
         1:"Home purchase",
@@ -116,30 +95,10 @@ cols_to_labels = {
         1:"Secured by a first lien",
         2:"Secured by a subordinate lien"
     },
-    "reverse_mortgage":{
-    1:"Reverse mortgage",
-    2:"Not a reverse mortgage",
-    1111:"Exempt"
-    },
-    "open-end_line_of_credit":{
-    1:"Open-end line of credit",
-    2:"Not an open-end line of credit",
-    1111:"Exempt"
-    },
-    "business_or_commercial_purpose":{
-    1:"Primarily for a business or commercial purpose",
-    2:"Not primarily for a business or commercial purpose",
-    1111:"Exempt"
-    },
     "hoepa_status":{
     1:"High-cost mortgage",
     2:"Not a high-cost mortgage",
     3:"Not applicable"
-    },
-    "negative_amortization":{
-    1:"Negative amortization",
-    2:"No negative amortization",
-    1111:"Exempt"
     },
     "interest_only_payment":{
     1:"Interest-only payments",
@@ -206,17 +165,6 @@ cols_to_labels = {
     4:"Not applicable",
     5:"No co-applicant"
     },
-    "applicant_ethnicity_observed":{
-    1:"Collected on the basis of visual observation or surname",
-    2:"Not collected on the basis of visual observation or surname",
-    3:"Not applicable"
-    },
-    "co-applicant_ethnicity_observed":{
-    1:"Collected on the basis of visual observation or surname",
-    2:"Not collected on the basis of visual observation or surname",
-    3:"Not applicable",
-    4:"No co-applicant"
-    },
     "applicant_race-1":{
     1:"American Indian or Alaska Native",
     2:"Asian",
@@ -258,17 +206,6 @@ cols_to_labels = {
     7:"Not applicable",
     8:"No co-applicant"
     },
-    "applicant_race_observed":{
-    1:"Collected on the basis of visual observation or surname",
-    2:"Not collected on the basis of visual observation or surname",
-    3:"Not applicable"
-    },
-    "co-applicant_race_observed":{
-    1:"Collected on the basis of visual observation or surname",
-    2:"Not collected on the basis of visual observation or surname",
-    3:"Not applicable",
-    4:"No co-applicant"
-    },
     "applicant_sex":{
     1:"Male",
     2:"Female",
@@ -283,23 +220,6 @@ cols_to_labels = {
     4:"Not applicable",
     5:"No co-applicant",
     6:"Co-applicant selected both male and female"
-    },
-    "applicant_sex_observed":{
-    1:"Collected on the basis of visual observation or surname",
-    2:"Not collected on the basis of visual observation or surname",
-    3:"Not applicable"
-    },
-    "co-applicant_sex_observed":{
-    1:"Collected on the basis of visual observation or surname",
-    2:"Not collected on the basis of visual observation or surname",
-    3:"Not applicable",
-    4:"No co-applicant"
-    },
-    "submission_of_application":{
-    1:"Submitted directly to your institution",
-    2:"Not submitted directly to your institution",
-    3:"Not applicable",
-    1111:"Exempt"
     },
     "aus-1":{
     1:"Desktop Underwriter (DU)",
