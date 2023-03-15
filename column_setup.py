@@ -35,12 +35,13 @@ col_to_dtypes = {
     "co-applicant_race-1":"category",
     "applicant_sex":"category",
     "co-applicant_sex":"category",
-    "co-applicant_sex_observed":"category",
     "co-applicant_age":"category",
     "aus-1":"category",
     "denial_reason-1":"category",
     "tract_population":"float32",
-    "ffiec_msa_md_median_family_income":"float32"
+    "ffiec_msa_md_median_family_income":"float32",
+    "tract_owner_occupied_units":"int32",
+    "tract_median_age_of_housing_units":"int32"
 }
 
 # Selected column names
@@ -209,14 +210,14 @@ cols_to_labels = {
     "applicant_sex":{
     1:"Male",
     2:"Female",
-    3:"Information not provided by applicant in mail, internet, or telephone application",
+    3:"Information not provided by applicant",
     4:"Not applicable",
     6:"Applicant selected both male and female"
     },
     "co-applicant_sex":{
     1:"Male",
     2:"Female",
-    3:"Information not provided by applicant in mail, internet, or telephone application",
+    3:"Information not provided by applicant",
     4:"Not applicable",
     5:"No co-applicant",
     6:"Co-applicant selected both male and female"
