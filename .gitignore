@@ -129,9 +129,9 @@ dmypy.json
 .pyre/
 
 # Ignored datasets
-/datasets/year_2021.csv
-/datasets/gleif-data-pool.csv
-/datasets/year_2021_shuffled.csv
+/data/year_2021.csv
+/data/gleif-data-pool.csv
+/data/year_2021_shuffled.csv
 
 # Ignored files
 .DS_Store
