@@ -80,9 +80,9 @@ cols_to_labels = {
     },
     "loan_type":{
         1:"Conventional",
-        2:"FHA",
-        3:"VA",
-        4:"RHS or FSA"
+        2:"Federal Housing Administration",
+        3:"Veterans Affairs",
+        4:"Rural Housing Service or Farm Service Agency"
     },
     "loan_purpose":{
         1:"Home purchase",
