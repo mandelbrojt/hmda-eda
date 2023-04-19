@@ -51,7 +51,7 @@ selected_cols = [col for col in col_to_dtypes.keys()]
 cols_to_labels = {
     "conforming_loan_limit":{
         "C":"Conforming",
-        "NC":"Nonconforming",
+        "NC":"Non-conforming",
         "U":"Undetermined",
         "NA":"Not Applicable"
     },
@@ -82,7 +82,7 @@ cols_to_labels = {
         1:"Conventional",
         2:"Federal Housing Administration",
         3:"Veterans Affairs",
-        4:"Rural Housing Service or Farm Service Agency"
+        4:"USDA Rural Housing Service or Farm Service Agency"
     },
     "loan_purpose":{
         1:"Home purchase",
