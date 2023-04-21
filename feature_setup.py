@@ -40,8 +40,8 @@ col_to_dtypes = {
     "denial_reason-1":"category",
     "tract_population":"float32",
     "ffiec_msa_md_median_family_income":"float32",
-    "tract_owner_occupied_units":"int32",
-    "tract_median_age_of_housing_units":"int32"
+    "tract_owner_occupied_units":"float32",
+    "tract_median_age_of_housing_units":"float32"
 }
 
 # Selected column names
