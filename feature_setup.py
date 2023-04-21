@@ -1,5 +1,5 @@
-# Maps every column to their corresponding data type
-col_to_dtypes = {
+# Maps feature names to data types for its use in dask dataframe read_csv
+dask_dtypes = {
     "lei":"str",
     "state_code":"category",
     "county_code":"category",
@@ -44,11 +44,57 @@ col_to_dtypes = {
     "tract_median_age_of_housing_units":"float32"
 }
 
-# Selected column names
-selected_cols = [col for col in col_to_dtypes.keys()]
+# Maps feature names to their proper data type
+feats_dtypes = {
+    "lei":"str",
+    "state_code":"category",
+    "county_code":"int32",
+    "conforming_loan_limit":"category",
+    "action_taken":"category",
+    "purchaser_type":"category",
+    "loan_type":"category",
+    "loan_purpose":"category",
+    "lien_status":"category",
+    "loan_amount":"float32",
+    "interest_rate":"float32",
+    "rate_spread":"float32",
+    "hoepa_status":"category",
+    "total_loan_costs":"float32",
+    "total_points_and_fees":"float32",
+    "origination_charges":"float32",
+    "discount_points":"float32",
+    "lender_credits":"float32",
+    "loan_term":"float32",
+    "interest_only_payment":"category",
+    "balloon_payment":"category",
+    "property_value":"float32",
+    "construction_method":"category",
+    "occupancy_type":"category",
+    "total_units":"category",
+    "applicant_age":"category",
+    "income":"float32",
+    "applicant_credit_score_type":"category",
+    "co-applicant_credit_score_type":"category",
+    "applicant_ethnicity-1":"category",
+    "co-applicant_ethnicity-1":"category",
+    "applicant_race-1":"category",
+    "co-applicant_race-1":"category",
+    "applicant_sex":"category",
+    "co-applicant_sex":"category",
+    "co-applicant_age":"category",
+    "aus-1":"category",
+    "denial_reason-1":"category",
+    "tract_population":"float32",
+    "ffiec_msa_md_median_family_income":"float32",
+    "tract_owner_occupied_units":"int32",
+    "tract_median_age_of_housing_units":"int32"
+}
 
-# Maps every categorical column to their corresponding labels
-cols_to_labels = {
+# Selected column names
+selected_feats = list(feats_dtypes.keys())
+
+# Maps every categorical feature to their corresponding labels
+feats_to_labels = {
     "conforming_loan_limit":{
         "C":"Conforming",
         "NC":"Non-conforming",
