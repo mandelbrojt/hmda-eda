@@ -2,7 +2,7 @@
 col_to_dtypes = {
     "lei":"str",
     "state_code":"category",
-    "county_code":"float32",
+    "county_code":"category",
     "conforming_loan_limit":"category",
     "action_taken":"category",
     "purchaser_type":"category",
