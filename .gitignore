@@ -132,6 +132,7 @@ dmypy.json
 /data/year_2021.csv
 /data/gleif-data-pool.csv
 /data/year_2021_shuffled.csv
+/data/2022_combined_mlar_header.txt
 
 # Ignored files
 .DS_Store
