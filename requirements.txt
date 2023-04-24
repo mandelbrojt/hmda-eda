@@ -5,6 +5,7 @@ backcall @ file:///home/conda/feedstock_root/build_artifacts/backcall_1592338393
 backports.functools-lru-cache @ file:///home/conda/feedstock_root/build_artifacts/backports.functools_lru_cache_1618230623929/work
 beautifulsoup4==4.11.2
 bokeh @ file:///home/conda/feedstock_root/build_artifacts/bokeh_1660586590972/work
+branca==0.6.0
 brotlipy @ file:///Users/runner/miniforge3/conda-bld/brotlipy_1666764759924/work
 certifi==2022.12.7
 cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1671179893800/work
@@ -22,6 +23,7 @@ decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_16415556
 distributed @ file:///home/conda/feedstock_root/build_artifacts/distributed_1676061549670/work
 executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1667317341051/work
 fastjsonschema @ file:///home/conda/feedstock_root/build_artifacts/python-fastjsonschema_1677336799617/work/dist
+folium==0.14.0
 fonttools==4.39.0
 fsspec @ file:///home/conda/feedstock_root/build_artifacts/fsspec_1674184942191/work
 HeapDict==1.0.1
