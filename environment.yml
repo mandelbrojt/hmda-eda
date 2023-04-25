@@ -146,6 +146,7 @@ dependencies:
       - numpy==1.23.5
       - patsy==0.5.3
       - phik==0.12.3
+      - pyarrow==11.0.0
       - pydantic==1.10.7
       - pyparsing==3.0.9
       - pywavelets==1.4.1
