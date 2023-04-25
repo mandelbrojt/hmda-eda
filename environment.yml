@@ -136,7 +136,9 @@ dependencies:
       - fonttools==4.39.0
       - htmlmin==0.1.12
       - imagehash==4.3.1
+      - ipywidgets==8.0.6
       - joblib==1.2.0
+      - jupyterlab-widgets==3.0.7
       - kiwisolver==1.4.4
       - matplotlib==3.6.3
       - multimethod==1.9.1
@@ -155,5 +157,6 @@ dependencies:
       - tqdm==4.64.1
       - typeguard==2.13.3
       - visions==0.7.5
+      - widgetsnbextension==4.0.7
       - ydata-profiling==4.1.2
 prefix: /Users/luismoreno/opt/miniconda3/envs/hum-dah-eda
