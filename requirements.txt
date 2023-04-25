@@ -34,12 +34,14 @@ importlib-metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib
 importlib-resources @ file:///home/conda/feedstock_root/build_artifacts/importlib_resources_1676919000169/work
 ipykernel @ file:///Users/runner/miniforge3/conda-bld/ipykernel_1676324664952/work
 ipython @ file:///Users/runner/miniforge3/conda-bld/ipython_1676047761112/work
+ipywidgets==8.0.6
 jedi @ file:///home/conda/feedstock_root/build_artifacts/jedi_1669134318875/work
 Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1654302431367/work
 joblib==1.2.0
 jsonschema @ file:///home/conda/feedstock_root/build_artifacts/jsonschema-meta_1669810440410/work
 jupyter_client @ file:///home/conda/feedstock_root/build_artifacts/jupyter_client_1676579893731/work
 jupyter_core @ file:///Users/runner/miniforge3/conda-bld/jupyter_core_1675110161290/work
+jupyterlab-widgets==3.0.7
 kiwisolver==1.4.4
 locket @ file:///home/conda/feedstock_root/build_artifacts/locket_1650660393415/work
 lz4 @ file:///Users/runner/miniforge3/conda-bld/lz4_1675806819980/work
@@ -101,6 +103,7 @@ typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_ext
 urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1673452138552/work
 visions==0.7.5
 wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1673864653149/work
+widgetsnbextension==4.0.7
 ydata-profiling==4.1.2
 zict @ file:///home/conda/feedstock_root/build_artifacts/zict_1651156074437/work
 zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1676708471276/work
