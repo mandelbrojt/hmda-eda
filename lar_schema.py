@@ -3,6 +3,8 @@
 https://ffiec.cfpb.gov/documentation/2022/modified-lar-schema/
 """
 
+import numpy as np
+
 # Maps column names to data types for use in dd.read_csv
 lar_dask_dtypes = {
     "activity_year":"float32",
@@ -106,7 +108,7 @@ labels_to_values = {
         "31": "Refinancing",
         "32": "Cash-out refinancing",
         "4": "Other purpose",
-        "5": "Not Applicable"
+        "5": None
     },
     "preapproval":{
         "1": "Preapproval requested",
@@ -139,7 +141,7 @@ labels_to_values = {
         "14": "Other Hispanic or Latino",
         "2": "Not Hispanic or Latino",
         "3": "Information not provided by applicant in mail internet or telephone application",
-        "4": "Not applicable"
+        "4": None
     },
     "applicant_ethnicity_2":{
         "1": "Hispanic or Latino",
@@ -181,7 +183,7 @@ labels_to_values = {
         "14": "Other Hispanic or Latino",
         "2": "Not Hispanic or Latino",
         "3": "Information not provided by applicant in mail internet or telephone application",
-        "4": "Not applicable",
+        "4": None,
         "5": "No co-applicant"
     },
     "co_applicant_ethnicity_1":{
@@ -227,12 +229,12 @@ labels_to_values = {
     "applicant_ethnicity_observed":{
         "1": "Collected on the basis of visual observation or surname",
         "2": "Not collected on the basis of visual observation or surname",
-        "3": "Not applicable"
+        "3": None
     },
     "co_applicant_ethnicity_observed":{
         "1": "Collected on the basis of visual observation or surname",
         "2": "Not collected on the basis of visual observation or surname",
-        "3": "Not applicable",
+        "3": None,
         "4": "No co-applicant"
     },
     "applicant_race_1":{
@@ -253,7 +255,7 @@ labels_to_values = {
         "44": "Other Pacific Islander",
         "5": "White",
         "6": "Information not provided by applicant in mail internet or telephone application",
-        "7": "Not applicable."
+        "7": None
     },
     "applicant_race_2":{
         "1": "American Indian or Alaska Native",
@@ -345,7 +347,7 @@ labels_to_values = {
         "44": "Other Pacific Islander",
         "5": "White",
         "6": "Information not provided by applicant in mail internet or telephone application",
-        "7": "Not applicable",
+        "7": None,
         "8": "No co-applicant"
     },
     "co_applicant_race_2":{
@@ -423,42 +425,42 @@ labels_to_values = {
     "applicant_race_observed":{
         "1": "Collected on the basis of visual observation or surname",
         "2": "Not collected on the basis of visual observation or surname",
-        "3": "Not applicable"
+        "3": None
     },
     "co_applicant_race_observed":{
         "1": "Collected on the basis of visual observation or surname",
         "2": "Not collected on the basis of visual observation or surname",
-        "3": "Not applicable",
+        "3": None,
         "4": "No co-applicant"
     },
     "applicant_sex":{
         "1": "Male",
         "2": "Female",
         "3": "Information not provided by applicant in mail internet or telephone application",
-        "4": "Not applicable",
+        "4": None,
         "6": "Applicant selected both male and female"
     },
     "co_applicant_sex":{
         "1": "Male",
         "2": "Female",
         "3": "Information not provided by applicant in mail internet or telephone application",
-        "4": "Not applicable",
+        "4": None,
         "5": "No co-applicant",
         "6": "Co-applicant selected both male and female"
     },
     "applicant_sex_observed":{
         "1": "Collected on the basis of visual observation or surname",
         "2": "Not collected on the basis of visual observation or surname",
-        "3": "Not applicable"
+        "3": None
     },
     "co_applicant_sex_observed":{
         "1": "Collected on the basis of visual observation or surname",
         "2": "Not collected on the basis of visual observation or surname",
-        "3": "Not applicable",
+        "3": None,
         "4": "No co-applicant"
     },
     "purchaser_type":{
-        "0": "Not applicable",
+        "0": None,
         "1": "Fannie Mae",
         "2": "Ginnie Mae",
         "3": "Freddie Mac",
@@ -473,7 +475,7 @@ labels_to_values = {
     "hoepa_status":{
         "1": "High-cost mortgage",
         "2": "Not a high-cost mortgage",
-        "3": "Not applicable"
+        "3": None
     },
     "lien_status":{
         "1": "Secured by a first lien", 
@@ -488,7 +490,7 @@ labels_to_values = {
         "6": "VantageScore 3.0",
         "7": "More than one credit scoring model",
         "8": "Other credit scoring model",
-        "9": "Not applicable"
+        "9": None
     },
     "co_applicant_credit_scoring_model":{
         "1": "Equifax Beacon 5.0",
@@ -499,7 +501,7 @@ labels_to_values = {
         "6": "VantageScore 3.0",
         "7": "More than one credit scoring model",
         "8": "Other credit scoring model",
-        "9": "Not applicable",
+        "9": None,
         "10": "No co-applicant"
     },
     "denial_reason_1":{
@@ -512,7 +514,7 @@ labels_to_values = {
         "7": "Credit application incomplete",
         "8": "Mortgage insurance denied",
         "9": "Other",
-        "10": "Not applicable"
+        "10": None
     },
     "denial_reason_2":{
         "1": "Debt-to-income ratio",
@@ -566,24 +568,24 @@ labels_to_values = {
     "manufactured_home_secured_property_type":{
         "1": "Manufactured home and land",
         "2": "Manufactured home and not land",
-        "3": "Not applicable"
+        "3": None
     },
     "manufactured_home_land_property_interest":{
         "1": "Direct ownership",
         "2": "Indirect ownership",
         "3": "Paid leasehold",
         "4": "Unpaid leasehold",
-        "5": "Not applicable"
+        "5": None
     },
     "submission_of_application":{
         "1": "Submitted directly to your institution",
         "2": "Not submitted directly to your institution",
-        "3": "Not applicable"
+        "3": None
     },
     "initially_payable_to_institution":{
         "1": "Initially payable to your institution",
         "2": "Not initially payable to your institution",
-        "3": "Not applicable"
+        "3": None
     },
     "aus_1":{
         "1": "Desktop Underwriter (DU)",
@@ -591,7 +593,7 @@ labels_to_values = {
         "3": "Technology Open to Approved Lenders (TOTAL) Scorecard",
         "4": "Guaranteed Underwriting System (GUS)",
         "5": "Other",
-        "6": "Not applicable"
+        "6": None
     },
     "aus_2":{
         "1": "Desktop Underwriter (DU)",
